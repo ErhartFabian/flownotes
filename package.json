@@ -16,7 +16,7 @@
         {
           "id": "flownotes",
           "title": "FlowNotes",
-          "icon": "media/flownotes.svg"
+          "icon": "media/flownotes.png"
         }
       ]
     },
@@ -67,7 +67,15 @@
     "@types/vscode": "^1.109.0",
     "@vscode/test-cli": "^0.0.12",
     "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.7.1",
     "eslint": "^9.39.3",
     "jsdom": "^28.1.0"
-  }
+  },
+  "publisher": "ErhartFabian",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-user/flownotes.git"
+  },
+  "icon": "media/flownotes.png"
 }
