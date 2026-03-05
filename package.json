@@ -1,0 +1,73 @@
+{
+  "name": "flownotes",
+  "displayName": "FlowNotes",
+  "description": "Una extensión sencilla para tomar notas rápidas",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "flownotes",
+          "title": "FlowNotes",
+          "icon": "media/flownotes.svg"
+        }
+      ]
+    },
+    "views": {
+      "flownotes": [
+        {
+          "type": "webview",
+          "id": "flownotes.notesView",
+          "name": "Notas"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "flownotes.addNote",
+        "title": "FlowNotes: Nueva nota",
+        "icon": "$(add)"
+      },
+      {
+        "command": "flownotes.refreshNotes",
+        "title": "FlowNotes: Refrescar notas",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "flownotes.addNote",
+          "when": "view == flownotes.notesView",
+          "group": "navigation"
+        },
+        {
+          "command": "flownotes.refreshNotes",
+          "when": "view == flownotes.notesView",
+          "group": "navigation@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint extension.js test/**/*.js",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.109.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "jsdom": "^28.1.0"
+  }
+}
