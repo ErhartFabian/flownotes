@@ -25,14 +25,21 @@ jobs:
       - name: Run tests
         run: xvfb-run -a npm test
 
-      - name: Bump version
-        run: npm version patch -m "Bump version to %s"
-
-      - name: Push version bump
+      - name: Configure Git
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git push
+
+      - name: Commit any changes from npm install
+        run: |
+          git add -A
+          git diff --staged --quiet || git commit -m "Update package-lock.json"
+
+      - name: Bump version
+        run: npm version patch -m "Bump version to %s"
+
+      - name: Push changes
+        run: git push --follow-tags
 
       - name: Publish to Marketplace
         run: npx vsce publish -p ${{ secrets.VSCE_PAT }}
