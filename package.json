@@ -1,8 +1,8 @@
 {
   "name": "flownotes",
   "displayName": "FlowNotes",
-  "description": "Una extensión sencilla para tomar notas rápidas",
-  "version": "0.0.1",
+  "description": "A simple extension for taking quick notes Resources in VSCode",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.109.0"
   },
