@@ -1,6 +1,6 @@
 # FlowNotes
 
-**A lightweight VS Code extension for quickly capturing and organizing your thoughts without leaving your editor**
+**A lightweight VS Code extension for quickly capturing and organizing your thoughts without leaving your editor.**
 
 FlowNotes brings the simplicity and visual appeal of sticky notes directly into Visual Studio Code. Stay focused on your code while keeping important reminders, TODO items, and quick references just a click away. Inspired by traditional sticky notes, FlowNotes provides a distraction-free way to manage your thoughts and ideas right within your favorite editor.
 
